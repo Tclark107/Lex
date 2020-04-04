@@ -1,0 +1,11 @@
+This is an excercise building a doubly linked list in C and then using 
+it to sort a list of items in Lexicographic order.
+
+Lex.java
+Sorts the input file.
+
+List.java
+Doubly linked list ADT
+
+ListInterface.java
+Interface file for List.java
