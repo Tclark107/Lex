@@ -5,11 +5,11 @@
 #       make ListClient        makes ListClient
 #------------------------------------------------------------------------------
 
-ListTest: ListTest.o List.o
-	gcc -o ListTest ListTest.o List.o
+ListClient: ListClient.o List.o
+	gcc -o ListClient ListClient.o List.o
 
-ListClient.o : ListTest.c List.h
-	gcc -c -std=c99 -Wall ListTest.c
+ListClient.o : ListClient.c List.h
+	gcc -c -std=c99 -Wall ListClient.c
 
 List.o : List.c List.h
 	gcc -c -std=c99 -Wall List.c

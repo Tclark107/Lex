@@ -87,10 +87,10 @@ int main(int argc, char* argv[]){
    */
 
    // test insertAfter
-   List D = newList();
+   /*List D = newList();
    append(D,14);
    printList(stdout,D);
-   moveFront(D);
+   /*moveFront(D);
    insertAfter(D,4);
    printList(stdout,D);
    append(D,17);
@@ -117,4 +117,52 @@ int main(int argc, char* argv[]){
    printList(stdout,D);
    insertBefore(D,100);
    printList(stdout,D);
+
+   // test deleteFront
+   deleteFront(D);
+   printList(stdout,D);
+   printf("after dF()\n");
+   deleteBack(D);
+   printList(stdout,D);
+   printf("after dB()\n");
+   deleteBack(D);*/
+
+   // testing delete
+   List E = newList();
+   append(E,10);
+   //delete(E);
+   printList(stdout,E);
+   //printf("after d()\n");
+   append(E,20);
+   printList(stdout,E);
+   //delete(E);
+   printList(stdout,E);
+   append(E,30);
+   //moveBack(E);
+   //movePrev(E);
+   printList(stdout,E);
+   //delete(E);
+   //printList(stdout,E);
+   append(E,40);
+   moveBack(E);
+   movePrev(E);
+   movePrev(E);
+   printList(stdout,E);
+   delete(E);
+   printList(stdout,E);
+
+   List F = copyList(E);
+   printList(stdout,F);
+
+   List G = concatList(E,F);
+   printList(stdout,G);
+
+   clear(G);
+   printList(stdout,G);
+   printf("cleared\n");
+
+   freeList(F);
+   printList(stdout,F);
+   printf("freed\n");
+
 }
