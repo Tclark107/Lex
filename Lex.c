@@ -86,6 +86,7 @@ int main(int argc, char* argv[]) {
    }
    
    // close files and return success
+   freeList(&L);
    fclose(in);
    fclose(out);
    return(EXIT_SUCCESS);
