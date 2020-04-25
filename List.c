@@ -268,6 +268,7 @@ void prepend(List L, int data) {
       L->front = N;
    }
    L->length++;
+   L->cursor++;
 }
 
 // append()
@@ -315,10 +316,10 @@ void insertBefore(List L, int data) {
       N->next = M;
       M->prev = N;
       L->length++;
+      L->cursor++;
    } else {
       prepend(L,data);
    }
-   L->cursor++;
 }
 
 // insertAfter()
@@ -371,6 +372,7 @@ void deleteFront(List L) {
       L->front = L->back = NULL;
    }
    L->length--;
+   L->cursor--;
    freeNode(&N);
 }
 
@@ -392,6 +394,7 @@ void deleteBack(List L) {
    } else {
       L->front = L->back = NULL;
    }
+   if(index(L) == length(L)-1) L->cursor = -1;
    L->length--;
    freeNode(&N);
 }
@@ -431,6 +434,15 @@ void delete(List L) {
  
 
 // Other Functions ------------------------------------------------------------
+
+int numOfDigits(long x) {
+   int count = 0;
+   while(x!= 0) {
+      count++;
+      x/=10;
+   }
+   return count;
+}
 
 // printList()
 // Prints to the file pointed to by out, a
